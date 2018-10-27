@@ -15,9 +15,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/wtf', function () {
-    return view('wtf');
+Route::get('/createorder', function () {
+    return view('createorder');
 });
-Route::get('/ahmed', function () {
-    return view('ahmed');
+Route::get('/updateorder', function () {
+    return view('updateorder');
 });
