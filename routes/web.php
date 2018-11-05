@@ -21,8 +21,10 @@ Route::get('/', function () {
 Route::get('/orders/create','OrdersController@create');
 Route::get('/orders/{order}','OrdersController@show');
 Route::get('/orders/{order}/edit','OrdersController@edit');
-Route::get('orders/update', function () {
-    return view('updateorder');
-});
+Route::patch('/orders/{order}','OrdersController@update');
+Route::delete('/orders/{order}','OrdersController@destroy');
+//Route::get('orders/update', function () {
+//    return view('updateorder');
+//});
 Route::get('/orders','OrdersController@index');
 Route::post('/orders','OrdersController@store');
