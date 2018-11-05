@@ -137,6 +137,7 @@ return [
         /*
          * Laravel Framework Service Providers...
          */
+		Jadjoubran\LaravelAngular\Provider\LaravelServiceProvider::class,
         Illuminate\Auth\AuthServiceProvider::class,
         Illuminate\Broadcasting\BroadcastServiceProvider::class,
         Illuminate\Bus\BusServiceProvider::class,
