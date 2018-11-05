@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>WOHO MY Laravel</title>
+    <title>@yield('title')</title>
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet" type="text/css">
@@ -12,7 +12,7 @@
     <!-- Styles -->
     <style>
         html, body {
-            background-color: #fff;
+            background-color: #000;
             color: #636b6f;
             font-family: 'Nunito', sans-serif;
             font-weight: 200;
@@ -39,7 +39,7 @@
         }
 
         .title {
-            font-size: 84px;
+            font-size: 48px;
         }
 
         .links > a {
@@ -74,13 +74,11 @@
     {{--@endif--}}
 
     <div class="content">
-        <div class="title m-b-md">
-            Logistics API
-        </div>
-
         <div class="links">
-            <a href="/createorder">Create Order</a>
-            <a href="/updateorder">Update Order</a>
+            <a href="/">Home</a>
+            <a href="/orders">My Orders</a>
+            <a href="/orders/create">Create Order</a>
+            <a href="/orders/update">Update Order</a>
         </div>
         <div>
             @yield ('content')
