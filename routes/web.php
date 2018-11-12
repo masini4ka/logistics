@@ -15,14 +15,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-//Route::get('/createorder', function () {
-//    return view('createorder');
-//});
-Route::get('/orders/create','OrdersController@create');
-Route::get('/orders/{order}','OrdersController@show');
-Route::get('/orders/{order}/edit','OrdersController@edit');
-Route::get('orders/update', function () {
-    return view('updateorder');
-});
-Route::get('/orders','OrdersController@index');
-Route::post('/orders','OrdersController@store');
+Route::resource('orders','OrdersController');
+//Route::get('/orders/create','OrdersController@create');
+//Route::get('/orders/{order}','OrdersController@show');
+//Route::get('/orders/{order}/edit','OrdersController@edit');
+//Route::patch('/orders/{order}','OrdersController@update');
+//Route::delete('/orders/{order}','OrdersController@destroy');
+//Route::get('/orders','OrdersController@index');
+//Route::post('/orders','OrdersController@store');

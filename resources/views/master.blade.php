@@ -3,12 +3,10 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <title>@yield('title')</title>
-
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet" type="text/css">
-
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.css">
     <!-- Styles -->
     <style>
         html, body {
@@ -78,7 +76,7 @@
             <a href="/">Home</a>
             <a href="/orders">My Orders</a>
             <a href="/orders/create">Create Order</a>
-            <a href="/orders/update">Update Order</a>
+            <a href="/orders/{order}/edit">Update Order</a>
         </div>
         <div>
             @yield ('content')
