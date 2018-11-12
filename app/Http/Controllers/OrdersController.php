@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use \App\Order;
 class OrdersController extends Controller
 {
     //
@@ -16,30 +17,28 @@ class OrdersController extends Controller
         return view('createorder');
     }
     public function store(){
-        $order=new \App\Order();
+        $order=new Order();
         $order->from=request('from');
         $order->to=request('to');
         $order->save();
         return redirect('/orders');
     }
-    public function show(\App\Order $order){
+    public function show(Order $order){
+//        $order=\App\Order::findOrFail($id);
+        return view('orders.show', compact('order'));
 
     }
-    public function update($id){
-        $order=\App\Order::find($id);
+    public function update(Order $order){
         $order->from=request('from');
         $order->to=request('to');
         $order->save();
         return redirect('/orders');
     }
-    public function destroy($id){
-        $order=\App\Order::find($id);
+    public function destroy(Order $order){
         $order->delete();
         return redirect('/orders');
-
     }
-    public function edit($id){//order
-        $order=\App\Order::find($id);
+    public function edit(Order $order){
         return view('orders.edit', compact('order'));
 
 }
