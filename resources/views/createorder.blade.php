@@ -7,12 +7,25 @@
     @csrf
     <div class="field">
         <label class="label" for="from">From</label>
-        <input type ="text" class="input" name = "from" placeholder="Pick up">
+        <input type ="text" class="input {{$errors->has('from') ? 'is-danger': ""}}" name = "from" value = "{{old('from')}}" placeholder="Pick up">
     </div>
     <div class="field">
         <label class="label" for="to">To</label>
-        <input type ="text" class="input" name = "to" placeholder="Destination">
+        <input type ="text" class="input {{$errors->has('to') ? 'is-danger': ""}}" name = "to"  value = "{{old('to')}}" placeholder="Destination">
     </div>
-    <button type ="submit">Create Order</button>
+    <div class="field">
+        <div class="control">
+            <button type ="submit" class="button is-link">Create Order</button>
+        </div>
+    </div>
+    @if ($errors->any())
+        <div class="notification is-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{$error}}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
 </form>
 @endsection

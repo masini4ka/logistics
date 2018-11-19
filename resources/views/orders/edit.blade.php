@@ -8,13 +8,13 @@
         <div class="field">
             <label class="label" for="from">From</label>
             <div class="control">
-                <input type="text" class="input" name="from" placeholder="from" value="{{$order->from}}">
+                <input type="text" class="input" name="from" placeholder="from" value="{{$order->from}}" required>
             </div>
         </div>
         <div class="field">
             <label class="label" for="to">To</label>
             <div class="control">
-                <input type="text" class="input" name="to" placeholder="to" value="{{$order->to}}">
+                <input type="text" class="input" name="to" placeholder="to" value="{{$order->to}}" required>
             </div>
         </div>
 
