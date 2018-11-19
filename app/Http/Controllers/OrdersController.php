@@ -17,6 +17,10 @@ class OrdersController extends Controller
         return view('createorder');
     }
     public function store(){
+        request()->validate([
+            'from'=>['required','min:3', 'max:255'],
+            'to'=>['required','min:3', 'max:255']
+        ]);
         $order=new Order();
         $order->from=request('from');
         $order->to=request('to');
