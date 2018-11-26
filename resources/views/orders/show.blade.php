@@ -12,8 +12,13 @@
     <p>
         <a href="/orders/{{$order->id}}/edit">Edit</a>
     </p>
-    {{--<p>--}}
-        {{--<a href="/orders/{{$order->id}}/delete">Delete</a>--}}
-    {{--</p>--}}
+
+    @if ($order->ordertostatuses->count())
+   <div>
+    @foreach ($order->ordertostatuses as $ordertostatus)
+        <li>{{$ordertostatus->status_id}}</li>
+    @endforeach
+   </div>
+    @endif
 
 @endsection
