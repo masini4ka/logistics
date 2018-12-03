@@ -13,6 +13,10 @@
         <label class="label" for="to">To</label>
         <input type ="text" class="input {{$errors->has('to') ? 'is-danger': ""}}" name = "to"  value = "{{old('to')}}" placeholder="Destination">
     </div>
+    {{--<div class="field">--}}
+        {{--<label class="label" for="status">Status</label>--}}
+        {{--<input type ="text" class="input" name = "status"  value = "{{old('status')}}" placeholder="Status">--}}
+    {{--</div>--}}
     <div class="field">
         <div class="control">
             <button type ="submit" class="button is-link">Create Order</button>
