@@ -25,6 +25,10 @@ class OrdersController extends Controller
         $order->from=request('from');
         $order->to=request('to');
         $order->save();
+
+        $status=\App\Status::find(1);
+        $order->status()->attach($status);
+
         return redirect('/orders');
     }
     public function show(Order $order){
@@ -36,6 +40,9 @@ class OrdersController extends Controller
         $order->from=request('from');
         $order->to=request('to');
         $order->save();
+
+        $status=\App\Status::find(request('status'));
+        $order->status()->attach($status);
         return redirect('/orders');
     }
     public function destroy(Order $order){

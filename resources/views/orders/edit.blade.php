@@ -17,6 +17,27 @@
                 <input type="text" class="input" name="to" placeholder="to" value="{{$order->to}}" required>
             </div>
         </div>
+        {{--<div class="field">--}}
+            {{--<label class="label" for="status">Status</label>--}}
+            {{--<div class="control">--}}
+                {{--<input type="text" class="input" name="status" placeholder="status" value="{{$order->status->last()['status_description']}}" required>--}}
+                {{--@foreach ($order->status as $status)--}}
+                    {{--<li>{!! $status->status_description !!}</li>--}}
+                {{--@endforeach--}}
+            {{--</div>--}}
+        {{--</div>--}}
+        <div class="field">
+            <label class="label" for="status">Status</label>
+        <select class="form-control" name="status">
+                <option value="1">Initiated</option>
+            <option value="2">On the way</option>
+
+            <option value="3">Ready for pickup</option>
+
+            <option value="4">Delivered</option>
+
+        </select>
+        </div>
 
         <div class="field">
             <div class="control">
