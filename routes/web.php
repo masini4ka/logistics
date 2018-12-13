@@ -23,3 +23,7 @@ Route::resource('orders','OrdersController');
 //Route::delete('/orders/{order}','OrdersController@destroy');
 //Route::get('/orders','OrdersController@index');
 //Route::post('/orders','OrdersController@store');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
