@@ -6,6 +6,11 @@ use Illuminate\Http\Request;
 use \App\Order;
 class OrdersController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');//->only(['create',''])//->except([''])
+    }
+
     //
     public function index(){
         $orders=\App\Order::all();
@@ -24,6 +29,7 @@ class OrdersController extends Controller
         $order=new Order();
         $order->from=request('from');
         $order->to=request('to');
+        $order->owner_id=auth()->id();
         $order->save();
 
         $status=\App\Status::find(1);
