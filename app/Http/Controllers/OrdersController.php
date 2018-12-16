@@ -13,7 +13,8 @@ class OrdersController extends Controller
 
     //
     public function index(){
-        $orders=\App\Order::all();
+//        $orders=\App\Order::all();
+        $orders=\App\Order::where('owner_id', auth()->id())->get();
 //        return $orders;
 
         return view('orders.index', compact('orders'));
@@ -38,9 +39,11 @@ class OrdersController extends Controller
         return redirect('/orders');
     }
     public function show(Order $order){
-//        $order=\App\Order::findOrFail($id);
-        return view('orders.show', compact('order'));
+        if($order->owner_id !=auth()->id()){
+            abort(403);
+        }
 
+        return view('orders.show', compact('order'));
     }
     public function update(Order $order){
         $order->from=request('from');
