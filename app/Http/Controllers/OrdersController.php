@@ -42,7 +42,7 @@ class OrdersController extends Controller
         if($order->owner_id !=auth()->id()){
             abort(403);
         }
-
+//        dd($order->status());
         return view('orders.show', compact('order'));
     }
     public function update(Order $order){
