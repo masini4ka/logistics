@@ -18,6 +18,8 @@ class CreateOrdersTable extends Migration
             $table->timestamps();
             $table->string('from');
             $table->string('to');
+            $table->UnsignedInteger('owner_id');
+            $table->foreign('owner_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 

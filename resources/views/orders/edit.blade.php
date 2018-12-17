@@ -29,13 +29,27 @@
         <div class="field">
             <label class="label" for="status">Status</label>
         <select class="form-control" name="status">
+            @if ($order->status->last()->id == 1)
+                <option value="1" selected = "selected">Initiated</option>
+                <option value="2">On the way</option>
+                <option value="3">Ready for pickup</option>
+                <option value="4">Delivered</option>
+                @elseif ($order->status->last()->id == 2)
                 <option value="1">Initiated</option>
-            <option value="2">On the way</option>
-
-            <option value="3">Ready for pickup</option>
-
-            <option value="4">Delivered</option>
-
+                <option value="2" selected = "selected">On the way</option>
+                <option value="3">Ready for pickup</option>
+                <option value="4">Delivered</option>
+            @elseif ($order->status->last()->id == 4)
+                <option value="1">Initiated</option>
+                <option value="2">On the way</option>
+                <option value="3">Ready for pickup</option>
+                <option value="4" selected = "selected">Delivered</option>
+                @elseif ($order->status->last()->id == 3)
+                <option value="1">Initiated</option>
+                <option value="2">On the way</option>
+                <option value="3" selected = "selected">Ready for pickup</option>
+                <option value="4">Delivered</option>
+            @endif
         </select>
         </div>
 
