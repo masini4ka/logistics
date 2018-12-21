@@ -4,7 +4,7 @@
 <div class="content">
 <ul>
 @foreach ($orders as $order)
-<li><a href="/orders/{{$order->id}}">ID: {{$order->id}} From: {{$order->from}} To: {{$order->to}}</a></li>
+<ul><a href="/orders/{{$order->id}}">ID: {{$order->id}} From: {{$order->from}} To: {{$order->to}}</a></ul>
 @endforeach
 </ul>
 </div>
