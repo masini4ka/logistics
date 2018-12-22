@@ -25,5 +25,5 @@ Route::resource('orders','OrdersController');
 //Route::post('/orders','OrdersController@store');
 
 Auth::routes();
-
+Route::get('/apidata','ApiDataController@index')->name('ApiData');
 Route::get('/home', 'HomeController@index')->name('home');

@@ -17,12 +17,22 @@
     <p class="dotted">
         <a href="/orders/{{$order->id}}/edit">Edit</a>
     </p>
-<p>.....>>..>>>TRACKING>>>..>>.....</p>
     @if ($order->status->count())
-       <div>
+       <div class="container">
+           <table class="table table-striped table-hover">
+               <thead>
+               <tr>
+                   <th>Status</th>
+                   <th>Date</th>
+               </tr>
+               </thead>
         @foreach ($order->status as $status)
-            <p align="left">STATUS: {{$status->status_description}} FROM: {{$status->updated_at}} </p>
+            <tr>
+                <td>{{$status->status_description}}</td>
+                <td>{{$status->updated_at}}</td>
+            </tr>
         @endforeach
+           </table>
        </div>
     @endif
 
