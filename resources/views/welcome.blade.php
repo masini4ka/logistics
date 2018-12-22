@@ -2,7 +2,7 @@
 <title>Home</title>
 @section ('content')
     <div class="title">
-        Logistics API
+        Parcel Tracking: Made simple
     </div>
-    <p>You got to the best Logistics company website ever! You are welcome in advance! Enjoy!</p>
+    <p>You got to the best logistics company ever! Enjoy!</p>
 @endsection
