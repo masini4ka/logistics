@@ -11,6 +11,8 @@ PHP 7.2.12
 
 PHPStorm
 
+Laravel
+
 Composer
 
 Xampp
