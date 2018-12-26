@@ -25,6 +25,8 @@ PostgreSQL
 2. Download and install Xampp. In ..\xampp\htdocs directory create a folder called "makisite". Copy project files into newly created ..\xampp\htdocs\makisite folder.
 
 3. Initiate composer with composer init from ..\xampp\htdocs\makisite
+
+4. Run database migrations with php:artisan migrate
     
 5. Start Apache server.
 
